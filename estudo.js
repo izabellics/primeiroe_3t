@@ -30,6 +30,9 @@ function quadrado(){
         document.write("O quadrado de " + i + " é " + (i*i) + "<br>");
     }
 }
+function moeda(atual){
+    return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+}
 
 function calcula(){
     let val = document.getElementById("valor").value;
@@ -51,8 +54,8 @@ function calcula(){
     }
     if(!Number(t)){
         alert("O valor deve ser um tempo.");
-        document.getElementById("valor").value = ""
-        document.getElementById("valor").focus ();
+        document.getElementById("meses").value = ""
+        document.getElementById("meses").focus ();
 
         return
     }
@@ -60,33 +63,7 @@ function calcula(){
     for(let m=1; m<= t;m++){
         res = val * (1+(j/100));
         val = res;
-        document.write("Mês" + m + "=" + res + "<br>");
+        document.write("Mês" + m + "=" + moeda(res) + "<br>");
     }
-    document.write("Resultado: "+res);
-}
-
-function somarNotas(){
-    let n1 = document.getElementById("t1").value;
-    let n2 = document.getElementById("t2").value;
-    let n3 = document.getElementById("t3").value;
-    let r = Number(n1) + Number(n2) + Number(n3);
-    document.getElementById("resultadosoma").innerHTML = "Soma: " + r;
-}
-
-function mediaNotas(){
-    let n1 = document.getElementById("t1").value;
-    let n2 = document.getElementById("t2").value;
-    let n3 = document.getElementById("t3").value;
-    let r = Number(n1) + Number(n2) + Number(n3);
-    r = r / Number(3)
-    document.getElementById("resultadomedia").innerHTML = "Média: " + r;
-}
-
-function fecharNotas(){
-    let n1 = document.getElementById("t1").value;
-    let n2 = document.getElementById("t2").value;
-    let n3 = document.getElementById("t3").value;
-    let r = Number(n1) + Number(n2) + Number(n3);
-    r = 180 - r;
-    document.getElementById("resultadofechar").innerHTML = "Falta: " + r;
+    document.write("Resultado: "+moeda(res));
 }
