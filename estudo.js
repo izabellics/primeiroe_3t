@@ -1,4 +1,4 @@
-let tabuada = 68;
+let tabuada = 27;
 function escreva(){
     document.write("Tabuada do " + tabuada + "<br>");
     document.write(tabuada + " x 1 = " + (tabuada*1)+"<br>");
@@ -57,11 +57,14 @@ function calcula(){
     }
 
     let res = val;
+    let texto = "";
     for(let m=1; m <= t;m++){
         res = val * (1+(j/100));
         val = res;
+        texto += m + ": " + moeda(res) + "<br>";
         //document.write("Mês " + m + " = " + moeda (res) + "<br>");
     }
+    document.getElementById("mes").innerHTML=texto;
     document.getElementById("total").innerHTML= "Total: " + moeda(res)
     //document.write("Resultado: "+moeda(res));
 } 
