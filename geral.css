@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-   
+   background: rgb(242, 227, 255);
 }
 .calculadora {
     background: rgb(0, 0, 0);
@@ -17,6 +17,19 @@ body {
     color: rgb(0, 70, 35);
     border-radius: 20px;
     padding: 5px;
+}
+.calculadora input:focus{
+    background: white;
+    color: black;
+}
+.calcF {
+display: none;
+}
+#calcFin{
+    display: none;
+}
+#calcFin:checked + .calculadora .calcF {
+    display: block;
 }
 #btnCalc {
     background: rgb(172, 144, 224);
